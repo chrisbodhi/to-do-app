@@ -5,6 +5,8 @@
   - unless todo.done  
     %h4= todo.item
     %h5= todo.duedate
+    = link_to 'Done?', todo_path(todo.id), :method => :put
+    = link_to 'trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
 
 %h3 Done Did It
 - @todos.each do |todo|
