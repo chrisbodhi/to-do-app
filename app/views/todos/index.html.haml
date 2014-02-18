@@ -6,18 +6,17 @@
   .small-12.medium-6.columns
     %h3 To Do
     - @todos.each do |todo|
-      - unless todo.done  
-        %h4= todo.item
-        %h5= todo.duedate
-        = link_to 'Done?', todo_path(todo.id), :method => :put
-        = link_to 'Trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
+      %h4= todo.item
+      %h5= todo.duedate.strftime("%B %e, %Y")
+      = link_to 'Done?', todo_path(todo.id), :method => :put
+      = link_to 'Trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
 
   .small-12.medium-6.columns
     %h3 Done Did It
-    - @todos.each do |todo|
-      - if todo.done  
-        %h4= todo.item
-        %h5= todo.duedate
+    - @done.each do |todo| 
+      %h4= todo.item
+      // %h5= todo.duedate.strftime("%B %e, %Y")
+      // %h5= todo.updated_at.strftime("%B %e, %Y")
 
 .row
   .small-12.medium-6.columns
@@ -29,4 +28,6 @@
   .small-12.medium-6.columns
     %h3 
       Past Due
-      %h2 To Do. Ha.
+    - @overdue.each do |overdue|
+      %h4= overdue.item
+      %h5= overdue.duedate

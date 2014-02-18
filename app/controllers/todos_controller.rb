@@ -1,7 +1,9 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
     @todo = Todo.new
+    @todos = Todo.where("done = ? AND duedate >= ?", false, Time.now).to_a
+    @done = Todo.where(done: true).to_a
+    @overdue = Todo.where("done = ? AND duedate <= ?", false, Time.now).to_a
   end
 
   def create
