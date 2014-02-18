@@ -1,6 +1,6 @@
 .row
   .small-12.medium-8.small-centered.medium-centered.columns
-    %h1 Todo#index
+    %h1 todo#index
 
 .row
   .small-12.medium-6.columns
@@ -30,4 +30,4 @@
       Past Due
     - @overdue.each do |overdue|
       %h4= overdue.item
-      %h5= overdue.duedate
+      %h5= overdue.duedate.strftime("%B %e, %Y")
