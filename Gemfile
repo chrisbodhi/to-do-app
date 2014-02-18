@@ -16,6 +16,9 @@ group :development do
   gem 'pry-plus'
 end
 
+# Form makin'
+gem 'simple_form'
+
 # Mailer helper
 gem 'pony'
 

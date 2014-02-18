@@ -1,0 +1,22 @@
+%h1 Todo#index
+
+%h3 To Do
+- @todos.each do |todo|
+  - unless todo.done  
+    %h4= todo.item
+    %h5= todo.duedate
+
+%h3 Done Did It
+- @todos.each do |todo|
+  - if todo.done  
+    %h4= todo.item
+    %h5= todo.duedate
+
+= simple_form_for @todo do |f|
+  = f.input :item, as: :string
+  = f.input :duedate, as: :date
+  = f.button :submit
+
+%h3 
+  Past Due
+  %h2 To Do. Ha.

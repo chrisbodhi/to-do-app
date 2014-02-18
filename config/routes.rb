@@ -1,7 +1,7 @@
 ToDoApp::Application.routes.draw do
-  resources :todo
+  resources :todos
 
-  root "todo#index"
+  root "todos#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
