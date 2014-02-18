@@ -10,7 +10,7 @@
         %h4= todo.item
         %h5= todo.duedate
         = link_to 'Done?', todo_path(todo.id), :method => :put
-        = link_to 'trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
+        = link_to 'Trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
 
   .small-12.medium-6.columns
     %h3 Done Did It
