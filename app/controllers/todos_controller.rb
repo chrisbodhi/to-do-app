@@ -7,11 +7,13 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create(todo_params)
-    t = Todo.last
-    t.done = false
-    t.save
-    redirect_to '/'
+    @todo = Todo.new(todo_params)
+    respond_to do |format|
+      if @todo.save
+        format.js { render layout: false }
+      end
+    end
+    # redirect_to '/'
   end
 
   def new
