@@ -1,24 +1,32 @@
-%h1 Todo#index
+.row
+  .small-12.medium-8.small-centered.medium-centered.columns
+    %h1 Todo#index
 
-%h3 To Do
-- @todos.each do |todo|
-  - unless todo.done  
-    %h4= todo.item
-    %h5= todo.duedate
-    = link_to 'Done?', todo_path(todo.id), :method => :put
-    = link_to 'trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
+.row
+  .small-12.medium-6.columns
+    %h3 To Do
+    - @todos.each do |todo|
+      - unless todo.done  
+        %h4= todo.item
+        %h5= todo.duedate
+        = link_to 'Done?', todo_path(todo.id), :method => :put
+        = link_to 'trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
 
-%h3 Done Did It
-- @todos.each do |todo|
-  - if todo.done  
-    %h4= todo.item
-    %h5= todo.duedate
+  .small-12.medium-6.columns
+    %h3 Done Did It
+    - @todos.each do |todo|
+      - if todo.done  
+        %h4= todo.item
+        %h5= todo.duedate
 
-= simple_form_for @todo do |f|
-  = f.input :item, as: :string
-  = f.input :duedate, as: :date
-  = f.button :submit
+.row
+  .small-12.medium-6.columns
+    = simple_form_for @todo do |f|
+      = f.input :item, as: :string
+      = f.input :duedate, as: :date
+      = f.button :submit
 
-%h3 
-  Past Due
-  %h2 To Do. Ha.
+  .small-12.medium-6.columns
+    %h3 
+      Past Due
+      %h2 To Do. Ha.
