@@ -24,8 +24,7 @@
       = f.button :submit
 
   .small-12.medium-6.columns
-    %h3 
-      Past Due
-    - @overdue.each do |overdue|
-      %h4= overdue.item
-      %h5= overdue.duedate.strftime("%B %e, %Y")
+    %h3 Past Due
+    .overdue
+      - @overdue.each do |overdue|
+        = render "pastdo", overdue: overdue
