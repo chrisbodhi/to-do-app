@@ -5,18 +5,14 @@
 .row
   .small-12.medium-6.columns
     %h3 To Do
-    - @todos.each do |todo|
-      %h4= todo.item
-      %h5= todo.duedate.strftime("%B %e, %Y")
-      = link_to 'Done?', todo_path(todo.id), :method => :put
-      = link_to 'Trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
+    .doing  
+      - @todos.each do |todo|
+        = render "newtodo", todo: todo
 
   .small-12.medium-6.columns
     %h3 Done Did It
     - @done.each do |todo| 
       %h4= todo.item
-      // %h5= todo.duedate.strftime("%B %e, %Y")
-      // %h5= todo.updated_at.strftime("%B %e, %Y")
 
 .row
   .small-12.medium-6.columns

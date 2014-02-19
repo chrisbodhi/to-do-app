@@ -1,0 +1,4 @@
+(function () {
+  var templateHtml = "<%= j render(partial: 'newtodo', locals: {todo: @todo}) %>";
+  $('.doing').prepend(templateHtml);
+})();

@@ -1,0 +1,4 @@
+%h4= todo.item
+%h5= todo.duedate.strftime("%B %e, %Y")
+= link_to 'Done?', todo_path(todo.id), :method => :put
+= link_to 'Trash?', todo_path(todo.id), :confirm => "are you sure?", :method => :delete
