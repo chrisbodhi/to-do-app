@@ -1,6 +1,9 @@
 ToDoApp::Application.routes.draw do
-  devise_for :users
-  resources :todos
+  devise_for :users 
+
+  resources :users do
+    resources :todos
+  end
 
   root "todos#index"
 

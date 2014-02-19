@@ -2,10 +2,11 @@ class TodosController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @todo = Todo.new
-    @todos = Todo.where(done: false).where("duedate >= ?", Time.now).to_a
-    @done = Todo.where(done: true).to_a
-    @overdue = Todo.where(done: false).where("duedate <= ?", Time.now).to_a
+    @user = current_user
+    @todo = @user.todos.new
+    @todos = Todo.where(user_id: @user.id).where(done: false).where("duedate >= ?", Time.now).to_a
+    @overdue = Todo.where(user_id: @user.id).where(done: false).where("duedate <= ?", Time.now).to_a
+    @done = Todo.where(user_id: @user.id).where(done: true).to_a
   end
 
   def create
@@ -15,7 +16,7 @@ class TodosController < ApplicationController
         format.js { render layout: false }
       end
     end
-    # redirect_to '/'
+    redirect_to '/'
   end
 
   def new
@@ -42,6 +43,6 @@ class TodosController < ApplicationController
   private
 
     def todo_params
-      params.require(:todo).permit(:item, :duedate, :done)  
+      params.require(:todo).permit(:item, :duedate, :done, :user_id)  
     end
 end
