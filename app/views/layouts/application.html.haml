@@ -1,8 +1,31 @@
 !!!
-%html
+%html{lang: "en"}
   %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0" }
     %title ToDoApp
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag :application
     = csrf_meta_tags
   %body
+    .row
+      .small-9.medium-offset-10.small-centered.columns
+        #user_nav
+          - if user_signed_in?
+            Logged in as 
+            %strong= current_user.email
+            = link_to 'Edit profile', edit_user_registration_path
+            |
+            = link_to "Logout", destroy_user_session_path, method: :delete
+          - else
+            = link_to "Sign up", new_user_registration_path
+            |
+            = link_to "Login", new_user_session_path
+    .row
+      .small-9.medium-6.small-centered.medium-centered.columns
+        %p.notice
+          = notice
+        %p.alert
+          = alert
     = yield

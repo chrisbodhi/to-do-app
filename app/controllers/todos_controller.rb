@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @todo = Todo.new
     @todos = Todo.where(done: false).where("duedate >= ?", Time.now).to_a
