@@ -10,20 +10,24 @@
     = csrf_meta_tags
   %body
     .row
-      .small-9.medium-offset-10.small-centered.columns
-        #user_nav
+      %nav.top-bar
+        %ul.left
           - if user_signed_in?
-            Logged in as 
-            %strong= current_user.email
-            = link_to 'Edit profile', edit_user_registration_path
-            |
-            = link_to "Logout", destroy_user_session_path, method: :delete
+            %li 
+              Reminders going to  
+              %strong= current_user.email
+        // Right Nav Section
+        %section.top-bar-section
+          - if user_signed_in?
+            %ul.right
+              %li= link_to 'Edit profile', edit_user_registration_path
+              %li= link_to "Logout", destroy_user_session_path, method: :delete
           - else
-            = link_to "Sign up", new_user_registration_path
-            |
-            = link_to "Login", new_user_session_path
-    .row
-      .small-9.medium-6.small-centered.medium-centered.columns
+            %ul.right
+              %li= link_to "Sign up", new_user_registration_path
+              %li= link_to "Login", new_user_session_path
+        / .row
+        /   .small-9.medium-6.small-centered.medium-centered.columns
         %p.notice
           = notice
         %p.alert
