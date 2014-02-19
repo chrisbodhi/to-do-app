@@ -1,6 +1,6 @@
 %h4= overdue.item
 %h5 
   Overdue by
-  = ((Time.now - overdue.duedate)/60/60/24).to_i
+  = ((Time.now - overdue.duedate)/60/60/24).round
   days
 = link_to 'Finally done?', user_todo_path(current_user.id, overdue.id), :method => :put

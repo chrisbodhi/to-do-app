@@ -16,7 +16,6 @@ class TodosController < ApplicationController
         format.js { render layout: false }
       end
     end
-    redirect_to '/'
   end
 
   def new
