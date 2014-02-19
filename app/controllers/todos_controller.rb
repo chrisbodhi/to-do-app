@@ -32,8 +32,14 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    Todo.find(params[:id]).delete
-    redirect_to '/'
+    @todo = Todo.find(params[:id])
+    # @todo.delete
+    respond_to do |format|
+      # if @todo.save
+      if @todo.delete
+        format.js { render layout: false }
+      end
+    end
   end
 
   def show

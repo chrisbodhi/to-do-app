@@ -6,7 +6,7 @@
     %title ToDoApp
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag :application
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     .row
@@ -26,10 +26,8 @@
             %ul.right
               %li= link_to "Sign up", new_user_registration_path
               %li= link_to "Login", new_user_session_path
-        / .row
-        /   .small-9.medium-6.small-centered.medium-centered.columns
-        %p.notice
-          = notice
-        %p.alert
-          = alert
+      %p.notice
+        = notice
+      %p.alert
+        = alert
     = yield
