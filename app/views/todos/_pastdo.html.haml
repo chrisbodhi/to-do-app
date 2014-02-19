@@ -2,7 +2,6 @@
   %h4= overdue.item
   %h5 
     Overdue by
-    = ((Time.now - overdue.duedate)/60/60/24).round
-    days
+    = pluralize(overdue.overdue_days, "day")
   = link_to 'Finally done?', user_todo_path(current_user.id, overdue.id), :method => :put, remote: true
   = link_to 'Giving up?', user_todo_path(current_user.id, overdue.id), :method => :delete, remote: true

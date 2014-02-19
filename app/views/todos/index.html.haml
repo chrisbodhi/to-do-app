@@ -4,15 +4,15 @@
 
 .row
   .small-12.medium-6.columns
-    %h3 To Do
-    .doing  
+    %h3 
+      To Do  
       - @todos.each do |todo|
         = render "newtodo", todo: todo
 
-  .small-12.medium-6.columns
+  .small-12.medium-6.columns.done
     %h3 Done Did It
-    - @done.each do |todo| 
-      %h4= todo.item
+    - @done.each do |todo|
+      = render "done", todo: todo
 
 .row
   .small-12.medium-6.columns

@@ -1,0 +1,6 @@
+(function () {
+  var doneTemplateHtml = "<%= j render(partial: 'done', locals: {todo: @todo}) %>";
+  $('.done').prepend(doneTemplateHtml);
+  var todoTemplateHtml = "<%= j render(partial: 'done', locals: {todo: @todo}) %>";
+  $('').remove();
+})();
