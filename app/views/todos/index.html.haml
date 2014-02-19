@@ -1,18 +1,7 @@
 .row
   .small-12.medium-8.small-centered.medium-centered.columns
-    %h1 todo#index
-
-.row
-  .small-12.medium-6.columns
-    %h3 
-      To Do  
-      - @todos.each do |todo|
-        = render "newtodo", todo: todo
-
-  .small-12.medium-6.columns.done
-    %h3 Done Did It
-    - @done.each do |todo|
-      = render "done", todo: todo
+    %header
+      %h1 todo#index
 
 .row
   .small-12.medium-6.columns
@@ -22,6 +11,19 @@
       = f.hidden_field :done, value: false
       = f.hidden_field :user_id, value: @user.id
       = f.button :submit
+
+  .small-12.medium-6.columns
+    %h3 
+      To Do  
+      - @todos.each do |todo|
+        = render "newtodo", todo: todo
+
+
+.row
+  .small-12.medium-6.columns.done
+    %h3 Done Did It
+    - @done.each do |todo|
+      = render "done", todo: todo
 
   .small-12.medium-6.columns
     %h3 
