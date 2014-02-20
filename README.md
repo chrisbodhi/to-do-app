@@ -16,4 +16,6 @@ Things I may want to cover:
 * prettify
 	* fonts
 	* colors
-	* background-image? 
+	* background-image?
+* move form into a partial
+*  

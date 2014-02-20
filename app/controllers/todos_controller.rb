@@ -25,26 +25,33 @@ class TodosController < ApplicationController
   end
 
   def update
+    # # This works - don't forget to remove 'remote: true' to reset
+    # did_it = Todo.find(params[:id])
+    # did_it.done = true
+    # did_it.save
+    # redirect_to '/'
+    ########################
     did_it = Todo.find(params[:id])
     did_it.done = true
-    did_it.save
-    redirect_to '/'
-    # redirect_to "/users/#{:user_id}/todos/#{params(:id)}"
-    # respond_to do |format|
-    #   if did_it.save
-    #     format.js { render layout: false }
-    #   end
-    # end
+    respond_to do |format|
+      if did_it.save
+        format.js { render layout: false }
+      end
+    end
   end
 
   def destroy
-    Todo.find(params[:id]).delete
-    redirect_to '/'
-    # respond_to do |format|
-    #   if @todo.delete
-    #     format.js { render layout: false }
-    #   end
-    # end
+    # # This works - don't forget to remove 'remote: true' to reset
+    # Todo.find(params[:id]).delete
+    # redirect_to '/'
+    ########################
+    quit = Todo.find(params[:id])
+    # Call 'quit.delete' here or in block?
+    respond_to do |format|
+      if quit.delete
+        format.js { render layout: false }
+      end
+    end
   end
 
   def show
