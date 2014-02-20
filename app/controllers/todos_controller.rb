@@ -29,6 +29,7 @@ class TodosController < ApplicationController
     did_it.done = true
     did_it.save
     redirect_to '/'
+    # redirect_to "/users/#{:user_id}/todos/#{params(:id)}"
     # respond_to do |format|
     #   if did_it.save
     #     format.js { render layout: false }
@@ -37,8 +38,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
-    @todo.delete
+    Todo.find(params[:id]).delete
     redirect_to '/'
     # respond_to do |format|
     #   if @todo.delete

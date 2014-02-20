@@ -63,15 +63,17 @@ header {
 }
 
 .done_items {
-  display: none;
-  &:hover {
-    display: block;
+  h4{
+    color: gray;
   }
 }
 
 .overdue {
   a{
     font-size: .6em;
+  }
+  h4{
+    color: firebrick;
   }
 }
 

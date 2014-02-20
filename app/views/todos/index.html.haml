@@ -4,7 +4,7 @@
       %h1 todo#index
 
 .row
-  .small-12.medium-6.columns
+  .small-12.medium-4.columns
     = simple_form_for([@user, @todo], remote: true) do |f|
       = f.input :item, as: :string
       = f.input :duedate, as: :date
@@ -12,20 +12,22 @@
       = f.hidden_field :user_id, value: @user.id
       = f.button :submit
 
-  .small-12.medium-6.columns
+  .small-12.medium-4.columns
     %h3 
       To Do  
-      - @todos.each do |todo|
-        = render "newtodo", todo: todo
-
-.row
-  .small-12.medium-6.columns.done
-    %h3 Done Did It
-    - @done.each do |todo|
-      = render "done", todo: todo
-
-  .small-12.medium-6.columns
+      .todo
+        - @todos.each do |todo|
+          = render "newtodo", todo: todo
+  
+  .small-12.medium-4.columns
     %h3
       Past Due
       - @overdue.each do |overdue|
         = render "pastdo", overdue: overdue
+
+.row
+  .small-12.medium-12.columns.done
+    %h3.medium-2.columns 
+      Done ||
+    - @done[-5..-1].each do |todo|
+      = render "done", todo: todo
