@@ -6,7 +6,7 @@ class TodosController < ApplicationController
     @todo = @user.todos.new
     @todos = Todo.where(user_id: @user.id).where(done: false).where("duedate >= ?", Time.now).to_a
     @overdue = Todo.where(user_id: @user.id).where(done: false).where("duedate <= ?", Time.now).to_a
-    @done = Todo.where(user_id: @user.id).where(done: true).to_a
+    @done = User.find_done(@user)
   end
 
   def create

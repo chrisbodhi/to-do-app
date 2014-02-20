@@ -4,5 +4,4 @@ class Todo < ActiveRecord::Base
   def overdue_days
     ((Time.now - self.duedate)/60/60/24).round
   end
-
 end

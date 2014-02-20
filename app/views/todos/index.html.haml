@@ -29,6 +29,5 @@
   .small-12.medium-12.columns.done
     %h3.medium-2.columns 
       Done ||
-      - if @done
-        - @done[-5..-1].each do |todo|
-          = render "done", todo: todo
+      - @done[-5..-1].each do |todo|
+        = render "done", todo: todo
