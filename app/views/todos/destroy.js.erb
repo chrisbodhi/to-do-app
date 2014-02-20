@@ -1,14 +1,1 @@
-// (function () {
-//   // locals: {todo: @todo}
-//   $('.todo[data-todo-id="<%= @todo.id %>"]').remove();
-// })();
-
-// (function () {
-//   // {locals: {overdue: @overdue}}
-//   $('.overdue[data-todo-id="<%= @overdue.id %>"]').remove();
-// })();
-
-(function () {
-  var templateHtml = "<%= j render(partial: 'newtodo', locals: {todo: @todo}) %>";
-  $('.todolist').prepend(templateHtml);
-})();
+$(".todolist").update("<%= j render(partial: 'newtodo', locals: {todo: @todo}) %>");

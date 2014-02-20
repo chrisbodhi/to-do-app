@@ -4,8 +4,8 @@ class TodosController < ApplicationController
   def index
     @user = current_user
     @todo = @user.todos.new
-    @todos = Todo.where(user_id: @user.id).where(done: false).where("duedate >= ?", Time.now).to_a
-    @overdue = Todo.where(user_id: @user.id).where(done: false).where("duedate <= ?", Time.now).to_a
+    @todos = Todo.find_todos(@user)
+    @overdue = Todo.find_overdues(@user)
     @done = User.find_done(@user)
   end
 
@@ -45,12 +45,11 @@ class TodosController < ApplicationController
     # Todo.find(params[:id]).delete
     # redirect_to '/'
     ########################
-    quit = Todo.find(params[:id])
-    # Call 'quit.delete' here or in block?
+    @user = current_user
+    @todos = Todo.find_todos(@user)
+    Todo.find(params[:id]).destroy
     respond_to do |format|
-      if quit.delete
-        format.js { render layout: false }
-      end
+      format.js { render layout: false }
     end
   end
 

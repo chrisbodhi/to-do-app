@@ -2,4 +2,4 @@
   %h4= todo.item
   %h5= todo.duedate.strftime("%B %e, %Y")
   = link_to 'Done?', user_todo_path(current_user.id, todo.id), :method => :put
-  = link_to 'Trash?', user_todo_path(current_user.id, todo.id), :confirm => "Quitting already?", :method => :delete
+  = link_to 'Trash?', user_todo_path(current_user.id, todo.id), :method => :delete, :remote => :true, todo: todo
