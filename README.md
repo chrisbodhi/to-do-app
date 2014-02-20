@@ -21,3 +21,4 @@ Things I may want to cover:
 * ~~move form into a partial~~
 * ~~clear form after submit~~
 * ~~keep items due today in the To Do directory~~
+* fade flash out after a set amount of time
