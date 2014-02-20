@@ -6,7 +6,7 @@ Things I may want to cover:
 
 * Ruby 2.0.0
 
-* [On Heroku](http://http://arcane-ridge-2246.herokuapp.com/)
+* [On Heroku](http://arcane-ridge-2246.herokuapp.com/)
 
 #####left to do
 
