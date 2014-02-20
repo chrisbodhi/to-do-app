@@ -9,9 +9,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    / .row
     %nav.top-bar
       %section.top-bar-section
+        / To add: reminder emails
         / %ul.left
         /   - if user_signed_in?
         /     %li 
@@ -27,7 +27,9 @@
           %ul.right
             %li= link_to "Sign up", new_user_registration_path
             %li= link_to "Login", new_user_session_path
-      .row
+
+    .row
+      .flash.small-8.medium-4.small-centered.medium-centered.columns  
         %p.notice
           = notice
         %p.alert
