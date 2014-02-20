@@ -1,4 +1,5 @@
 (function () {
   var templateHtml = "<%= j render(partial: 'newtodo', locals: {todo: @todo}) %>";
   $('.todolist').prepend(templateHtml);
+  $('#todo_item').val('');
 })();

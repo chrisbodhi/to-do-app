@@ -1,0 +1,6 @@
+= simple_form_for([@user, @todo], remote: true) do |f|
+  = f.input :item, as: :string
+  = f.input :duedate, as: :date
+  = f.hidden_field :done, value: false
+  = f.hidden_field :user_id, value: @user.id
+  = f.button :submit

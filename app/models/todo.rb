@@ -6,10 +6,14 @@ class Todo < ActiveRecord::Base
   end
 
   def self.find_todos(user)
-    self.where(user_id: user.id).where(done: false).where("duedate >= ?", Time.now).to_a
+    self.where(user_id: user.id).where(done: false).where("duedate >= ?", Time.now.midnight + 1.day).to_a
+  end
+
+  def self.find_todays(user)
+    self.where(user_id: user.id).where(done: false).where(duedate: Time.now.midnight..(Time.now.midnight + 1.day)).to_a
   end
 
   def self.find_overdues(user)
-    self.where(user_id: user.id).where(done: false).where("duedate <= ?", Time.now).to_a
+    self.where(user_id: user.id).where(done: false).where("duedate <= ?", Time.now.midnight - 1.day).to_a
   end
 end

@@ -4,6 +4,7 @@ class TodosController < ApplicationController
   def index
     @user = current_user
     @todo = @user.todos.new
+    @todays = Todo.find_todays(@user)
     @todos = Todo.find_todos(@user)
     @overdue = Todo.find_overdues(@user)
     @done = User.find_done(@user)

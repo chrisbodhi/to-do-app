@@ -10,13 +10,14 @@ Things I may want to cover:
 
 #####left to do
 
-* AJAX for removing items from the list
-* AJAX for adding items to 'Done' list
+* ~~AJAX for removing items from the list~~
+* ~~AJAX for adding items to 'Done' list~~
 * less generic date picker
 * Action Mailer for daily reminder of things to do
 * prettify
 	* fonts
 	* colors
 	* background-image?
-* move form into a partial
-* clear form after submit
+* ~~move form into a partial~~
+* ~~clear form after submit~~
+* ~~keep items due today in the To Do directory~~
