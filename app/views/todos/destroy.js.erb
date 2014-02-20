@@ -1,1 +1,1 @@
-$(".todolist").update("<%= j render(partial: 'newtodo', locals: {todo: @todo}) %>");
+$('div[data-todo-id=<%= @todo.id %>]').remove();

@@ -25,29 +25,21 @@ class TodosController < ApplicationController
   end
 
   def update
-    # # This works - don't forget to remove 'remote: true' to reset
-    # did_it = Todo.find(params[:id])
-    # did_it.done = true
-    # did_it.save
-    # redirect_to '/'
-    ########################
-    did_it = Todo.find(params[:id])
-    did_it.done = true
+    @todo = Todo.find(params[:id])
+    @todo.done = true
+    @user = current_user
+    @done = User.find_done(@user)
     respond_to do |format|
-      if did_it.save
+      if @todo.save
         format.js { render layout: false }
       end
     end
   end
 
   def destroy
-    # # This works - don't forget to remove 'remote: true' to reset
-    # Todo.find(params[:id]).delete
-    # redirect_to '/'
-    ########################
     @user = current_user
     @todos = Todo.find_todos(@user)
-    Todo.find(params[:id]).destroy
+    @todo = Todo.destroy(params[:id])
     respond_to do |format|
       format.js { render layout: false }
     end
