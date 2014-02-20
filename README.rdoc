@@ -1,9 +1,0 @@
-== README
-
-This README is for my to-do app.
-
-Things I may want to cover:
-
-* Ruby 2.0.0
-
-* On Heroku 

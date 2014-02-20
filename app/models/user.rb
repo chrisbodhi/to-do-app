@@ -8,10 +8,12 @@ class User < ActiveRecord::Base
 
   def self.find_done(user)
     searching = Todo.where(user_id: user.id).where(done: true).to_a
-    if searching.length < 5
-      [{item: 'bake'}, {item: 'lift '}, {item: 'write'}, {item: 'veggies'}, {item: 'water'}] 
-    else
-      searching
+    filler = [{item: 'bake a cake'}, {item: 'lift weights'}, {item: 'write a list'}, {item: 'eat veggies'}, {item: 'drink water'}]
+    i = 4
+    while searching.length < 5
+      searching << filler[i]
+      i -= 1
     end
+    searching[-5..-1]
   end
 end
