@@ -28,11 +28,13 @@ a{
 }
 
 header {
+  width: 100%;
   h1{
     color: white;
     font-weight: 800;
     text-decoration: line-through;
     text-shadow: 2px 3px 10px black;
+    width: 100%;
   }
 }
 
@@ -87,4 +89,16 @@ header {
 #user_remember_me {
   margin-right: 5px;
   color: red;
+}
+
+#todo_duedate_2i {
+  width: 35%;
+}
+
+#todo_duedate_3i {
+  width: 25%;
+}
+
+#todo_duedate_1i { 
+  width: 36%;
 }

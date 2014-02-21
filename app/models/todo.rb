@@ -1,5 +1,6 @@
 class Todo < ActiveRecord::Base
   belongs_to :user
+  validates :item, presence: true
 
   def overdue_days
     ((Time.now - self.duedate)/60/60/24).round

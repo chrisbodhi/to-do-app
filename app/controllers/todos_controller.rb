@@ -15,6 +15,8 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.save
         format.js { render layout: false }
+      else
+        {:alert => "Something serious happened."}
       end
     end
   end

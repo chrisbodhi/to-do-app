@@ -12,7 +12,7 @@ Things I may want to cover:
 
 * ~~AJAX for removing items from the list~~
 * ~~AJAX for adding items to 'Done' list~~
-* less generic date picker
+* ~~less generic date picker~~
 * Action Mailer for daily reminder of things to do
 * prettify
 	* fonts
@@ -22,4 +22,5 @@ Things I may want to cover:
 * ~~clear form after submit~~
 * ~~keep items due today in the To Do directory~~
 * fade flash out after a set amount of time
-* validate presence for item field
+* ~~validate presence for item field~~
+* fail gracefully for input[item]
