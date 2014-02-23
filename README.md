@@ -24,3 +24,7 @@ Things I may want to cover:
 * fade flash out after a set amount of time
 * ~~validate presence for item field~~
 * fail gracefully for input[item]
+* done list
+	* truncate
+	* fill width
+* branding: give it attitude. Or "'tude."
