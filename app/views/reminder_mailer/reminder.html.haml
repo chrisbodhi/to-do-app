@@ -1,15 +1,18 @@
 Proprietor of
-  = @user
-  ,
+= @user
+  :
 
-%p This is the shit you have to get done today:
+%p 
+  This is the shit you have to get done today:
 
 %ul
 - @list.each do |item|
-  %li item
+  %li 
+    item
 
 %p This is the shit you shoulda got done already:
 
 %ul
 - @overdue.each do |over|
-  %li over
+  %li 
+    over
