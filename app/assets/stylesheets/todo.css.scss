@@ -1,90 +1,3 @@
-// Place all the styles related to the todo controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-a{
-  color: green;
-  &:hover{
-    color: black;
-  }
-}
-
-.top-bar {
-  width: 100%;
-  max-width: 100%;
-}
-
-.button {
-  background-color: gray;
-  border: 2px solid black;
-  border-radius: 9px 0;
-  &:click {
-    background-color: white;
-    color: gray;
-  }
-  &:hover {
-    background-color: red;
-  }
-}
-
-header {
-  width: 100%;
-  h1{
-    color: white;
-    font-weight: 800;
-    text-decoration: line-through;
-    text-shadow: 2px 3px 10px black;
-    width: 100%;
-  }
-}
-
-.title {
-  color: white;
-  font-weight: 800;
-  text-decoration: line-through;
-  text-shadow: 2px 3px 10px black;
-}
-
-.notice {
-  background-color: tomato;
-  border: 2px solid white;
-  color: white;
-  width: 100%;
-  margin: 20px;
-  font-family: Courier, sans-serif;
-  text-justify: center;
-}
-
-.alert {
-  background-color: tomato;
-  border: 2px solid white;
-  color: white;
-  width: 100%;
-  margin: 10px;
-  font-family: Courier, sans-serif;
-}
-
-.done_items {
-  h4{
-    color: gray;
-  }
-}
-
-.overdue {
-  a{
-    font-size: .6em;
-  }
-  h4{
-    color: firebrick;
-  }
-}
-
-.todo {
-  a{
-    font-size: .6em;
-  }
-}
-
 // Gives that sign-in 'remember me' checkbox some space to breathe
 #user_remember_me {
   margin-right: 5px;
@@ -101,4 +14,99 @@ header {
 
 #todo_duedate_1i { 
   width: 36%;
+}
+
+// Now, on to the HTML elements' stylin'
+
+a{
+  color: green;
+  &:hover{
+    color: black;
+  }
+}
+
+header {
+  width: 100%;
+  h1{
+    color: white;
+    font-weight: 800;
+    text-decoration: line-through;
+    text-shadow: 2px 3px 10px black;
+    width: 100%;
+  }
+}
+
+// Don't forget the classes!
+
+.button {
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 9px 0;
+  &:click {
+    background-color: white;
+    color: gray;
+  }
+  &:hover {
+    background-color: red;
+  }
+}
+
+.done_items {
+  h4{
+    color: gray;
+  }
+}
+
+.intro {
+  width: 50%;
+}
+
+.overdue {
+  a{
+    font-size: .6em;
+  }
+  h4{
+    color: firebrick;
+  }
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  text-decoration: line-through;
+  text-shadow: 2px 3px 10px black;
+}
+
+.todo {
+  a{
+    font-size: .6em;
+  }
+}
+
+.top-bar {
+  width: 100%;
+  max-width: 100%;
+}
+
+// Flashes! Alert! Notice! Exclamations!
+
+.flash {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.alert {
+  background-color: tomato;
+  border: 2px solid white;
+  margin: 10px;
+  font-family: Courier, sans-serif;
+}
+
+.notice {
+  background-color: tomato;
+  border: 2px solid white;
+  margin: 20px;
+  font-family: Courier, sans-serif;
 }

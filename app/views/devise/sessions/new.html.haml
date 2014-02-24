@@ -1,7 +1,19 @@
 .row
   .small-10.medium-7.small-centered.medium-centered.columns
-    %h2.title 
-      todo#index
+    .row
+      .small-5.small-centered.columns
+        %h2.title 
+          done git it
+    %hr
+    .row
+      .small-10.medium-12.small-centered.medium-centered.columns
+        %h5
+          a basic todo list that let's you know when you've failed as a person
+    .row
+      .small-10.medium-7.small-centered.medium-centered.columns
+        %h6
+          daily agendas delivered early every morning!
+    %hr
     = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       .form-inputs
         = f.input :email, :required => false, :autofocus => true
