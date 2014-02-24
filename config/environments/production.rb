@@ -79,5 +79,5 @@ ToDoApp::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Mailer action, per Devise.
-  config.action_mailer.default_url_options = { :host => 'ADD HOST HERE' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

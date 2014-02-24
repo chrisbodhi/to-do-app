@@ -1,5 +1,5 @@
 class ReminderMailer < ActionMailer::Base
-  default from: "from@example.com", subject: "Reminder: GSD!"
+  default from: "donegitit@gmail.com", subject: "Reminder: GSD!"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

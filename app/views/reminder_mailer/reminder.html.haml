@@ -1,18 +1,22 @@
-Proprietor of
-= @user
+To the proprietor of
+= @user.email
+:
 
+- if @list.length > 0
+  %p 
+    This is the shit you said you gotta get done today:
 
-%p 
-  This is the shit you have to get done today:
+  %ul
+    - @list.each do |item|
+      %li 
+        = item.item
 
-%ul
-  - @list.each do |item|
-    %li 
-      = item
+- if @overdue.length > 0
+  %p This is the shit you shoulda got done already:
 
-%p This is the shit you shoulda got done already:
+  %ul
+    - @overdue.each do |over|
+      %li 
+        = over.item
 
-%ul
-  - @overdue.each do |over|
-    %li 
-      = over
+Now, git it done.

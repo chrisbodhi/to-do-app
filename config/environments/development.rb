@@ -19,14 +19,14 @@ ToDoApp::Application.configure do
   # Change mail delivery types
   config.action_mailer.delivery_method = :letter_opener
   # Configuration for mailer
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'ENV["USERNAME"]',
-    password:             'ENV["PASSWORD"]',
-    authentication:       'plain',
-    enable_starttls_auto: true  }
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'example.com',
+  #   user_name:            'ENV["USERNAME"]',
+  #   password:             'ENV["PASSWORD"]',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
