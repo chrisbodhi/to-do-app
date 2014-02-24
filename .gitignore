@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Environmental Variables
+/.env
+
+# Markdown auto-save
+/README (Autosaved)

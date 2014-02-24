@@ -21,6 +21,7 @@ group :test, :development do
   gem 'email_spec'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'foreman'
 end
 
 # Form makin'
