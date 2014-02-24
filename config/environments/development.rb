@@ -17,20 +17,7 @@ ToDoApp::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # Development mail delivery
-  # config.action_mailer.delivery_method = :letter_opener
-
-  # Production mail delivery types
-  config.action_mailer.delivery_method = :smtp
-  
-  # Configuration for mailer
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'arcane-ridge-2246.herokuapp.com/',
-    user_name:            ENV["USERNAME"],
-    password:             ENV["PASSWORD"],
-    authentication:       'plain',
-    enable_starttls_auto: true  }
+  config.action_mailer.delivery_method = :letter_opener
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

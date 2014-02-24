@@ -80,4 +80,18 @@ ToDoApp::Application.configure do
 
   # Mailer action, per Devise.
   config.action_mailer.default_url_options = { :host => 'http://arcane-ridge-2246.herokuapp.com/' }
+
+  # Production mail delivery types
+  config.action_mailer.delivery_method = :smtp
+  
+  # Configuration for mailer
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    # domain:               'arcane-ridge-2246.herokuapp.com/',
+    user_name:            ENV["USERNAME"],
+    password:             ENV["PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+    
 end
