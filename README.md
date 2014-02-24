@@ -13,7 +13,7 @@ Things I may want to cover:
 * ~~AJAX for removing items from the list~~
 * ~~AJAX for adding items to 'Done' list~~
 * ~~less generic date picker~~
-* Action Mailer for daily reminder of things to do
+* ~~Action Mailer for daily reminder of things to do~~
 * prettify
 	* fonts
 	* colors
