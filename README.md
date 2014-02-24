@@ -30,3 +30,4 @@ Things I may want to cover:
 * branding: give it attitude. Or "'tude."
 * favicon
 * Down the line: post to Twitter the items that are past due
+* graph showing number of items done over time
