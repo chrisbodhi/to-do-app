@@ -13,7 +13,7 @@ Things I may want to cover:
 * ~~AJAX for removing items from the list~~
 * ~~AJAX for adding items to 'Done' list~~
 * ~~less generic date picker~~
-* Action Mailer for daily reminder of things to do
+* ~~Action Mailer for daily reminder of things to do~~
 * prettify
 	* fonts
 	* colors
@@ -24,3 +24,9 @@ Things I may want to cover:
 * fade flash out after a set amount of time
 * ~~validate presence for item field~~
 * fail gracefully for input[item]
+* done list
+	* truncate
+	* fill width
+* branding: give it attitude. Or "'tude."
+* favicon
+* Down the line: post to Twitter the items that are past due
