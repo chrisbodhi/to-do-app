@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/README (Autosaved)
+
+# Ignore environment variables
+/.env
