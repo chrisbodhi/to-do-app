@@ -16,8 +16,12 @@ ToDoApp::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
-  # Change mail delivery types
+  # Development mail delivery
+  # config.action_mailer.delivery_method = :letter_opener
+
+  # Production mail delivery types
   config.action_mailer.delivery_method = :smtp
+  
   # Configuration for mailer
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
