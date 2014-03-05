@@ -5,7 +5,7 @@
 
 .row
   .small-12.medium-4.columns
-    = render "form"
+    =render "form"
 
     - if @todo.errors.any?
       #error_explanation
@@ -38,12 +38,6 @@
     - @done.each do |todo|
       = render "done", todo: todo
 
-%canvas#myChart{width: "400", height: "400"}
-
-
-
-
-
-
-
-
+.row
+  .small-12.medium-12.small-centered.medium-centered.columns
+    %canvas#myChart{height: "150px", width: "800px"}

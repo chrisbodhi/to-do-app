@@ -8,6 +8,8 @@ class TodosController < ApplicationController
     @todos = Todo.find_todos(@user)
     @overdue = Todo.find_overdues(@user)
     @done = User.find_done(@user)
+    @todo_count = Todo.todo_count(@user)
+    @done_count = Todo.done_count(@user)
   end
 
   def create
