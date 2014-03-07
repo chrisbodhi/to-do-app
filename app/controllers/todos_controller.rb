@@ -10,6 +10,8 @@ class TodosController < ApplicationController
     @done = User.find_done(@user)
     @todo_count = Todo.todo_count(@user)
     @done_count = Todo.done_count(@user)
+    gon.todo_count = Todo.todo_count(@user)
+    gon.done_count = Todo.done_count(@user)
   end
 
   def create

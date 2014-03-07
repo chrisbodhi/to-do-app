@@ -15,6 +15,8 @@ $(document).ready(function() {
 
 // Chart data
 
+var userId = $('canvas').data("user");
+
 var data = {
 
 labels : ["5 Days Ago", "4 Days Ago", "3 Days Ago", "2 Days Ago","Yesterday"],
@@ -23,17 +25,21 @@ datasets : [
   {
     fillColor : "rgba(220,220,220,0.5)",
     strokeColor : "rgba(220,220,220,1)",
-    data : <%= Todo.todo_count(User.first) %>
+    data : gon.todo_count
   },
   {
     fillColor : "rgba(220,120,20,0.5)",
     strokeColor : "rgba(220,120,20,1)",
-    data : <%= Todo.done_count(User.first) %>
+    data : gon.done_count
   }
   ]
 }
 
+// Get the max of the todo_count array
 
+var getMaxOfArray = function (numArray) {
+    return Math.max.apply(null, numArray);
+}
 
 // Chart Options
 
@@ -47,7 +53,7 @@ var options = {
   
   //** Required if scaleOverride is true **
   //Number - The number of steps in a hard coded scale
-  scaleSteps : <%= Todo.todo_count(User.first).max %>,
+  scaleSteps : getMaxOfArray(gon.todo_count),
   //Number - The value jump in the hard coded scale
   scaleStepWidth : 1,
   //Number - The scale starting value

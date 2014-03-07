@@ -33,6 +33,9 @@ gem 'pony'
 # For user authentication
 gem 'devise'
 
+# For passing around Ruby info into JS
+gem 'gon'
+
 # Styling
 gem 'foundation-rails'
 gem 'haml'

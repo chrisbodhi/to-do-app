@@ -76,6 +76,9 @@ GEM
     foundation-rails (5.0.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -232,6 +235,7 @@ DEPENDENCIES
   factory_girl_rails
   foreman
   foundation-rails
+  gon
   haml
   haml-rails
   hirb
